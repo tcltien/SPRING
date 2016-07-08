@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- info -->
+	<appender name="info" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/mlb.log" />
+		<param name="Threshold" value="info" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="1000KB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%c] %p - %m%n" />
+		</layout>
+	</appender>
+    <!-- info -->
+    <appender name="info" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.base}/logs/mlb.log" />
+        <param name="Threshold" value="info" />
+        <param name="ImmediateFlush" value="true" />
+        <param name="MaxFileSize" value="1000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%c] %p - %m%n" />
+        </layout>
+    </appender>
+
+	<!-- error -->
+	<appender name="error" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/mlb-error.log" />
+		<param name="Threshold" value="error" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="1000KB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%c] %p - %m%n" />
+		</layout>
+	</appender>
+    <!-- error -->
+    <appender name="error" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.base}/logs/mlb-error.log" />
+        <param name="Threshold" value="error" />
+        <param name="ImmediateFlush" value="true" />
+        <param name="MaxFileSize" value="1000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%c] %p - %m%n" />
+        </layout>
+    </appender>
+
+	<!-- debug -->
+	<appender name="debug" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/mlb-debug.log" />
+		<param name="Threshold" value="debug" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="1000KB" />
+		<param name="MaxBackupIndex" value="5" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %l [%c] %p - %m%n" />
+		</layout>
+	</appender>
+    <!-- debug -->
+    <appender name="debug" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${catalina.base}/logs/mlb-debug.log" />
+        <param name="Threshold" value="debug" />
+        <param name="ImmediateFlush" value="true" />
+        <param name="MaxFileSize" value="1000KB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %l [%c] %p - %m%n" />
+        </layout>
+    </appender>
+
+	<!-- categories -->
+	<category name="com.directv.mlb" additivity="false">
+		<priority value="all" />
+		<appender-ref ref="info" />
+		<appender-ref ref="debug" />
+		<appender-ref ref="error" />
+	</category>
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="info" />
+		<appender-ref ref="debug" />
+		<appender-ref ref="error" />
+	</root>
+    <!-- categories -->
+    <category name="com.directv.mlb" additivity="false">
+        <priority value="all" />
+        <appender-ref ref="info" />
+        <appender-ref ref="debug" />
+        <appender-ref ref="error" />
+    </category>
+    <root>
+        <priority value="warn" />
+        <appender-ref ref="info" />
+        <appender-ref ref="debug" />
+        <appender-ref ref="error" />
+    </root>
+
+
+   
+</log4j:configuration>
